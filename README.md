@@ -1,16 +1,84 @@
-# React + Vite
+# 📸 Photo Gallery App
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A responsive Photo Gallery Web Application built using React.js, Vite, and Tailwind CSS. The application fetches photos from the Picsum Photos API and allows users to search photos by author name and manage their favourite photos.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* Fetches 30 photos from the Picsum Photos API.
+* Responsive photo grid for mobile, tablet, and desktop.
+* Real-time search functionality by author name.
+* Add and remove photos from favourites.
+* Favourite data persists using browser LocalStorage.
+* Loading spinner while fetching photos.
+* Error handling for failed API requests.
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* React.js
+* Vite
+* JavaScript (ES6+)
+* Tailwind CSS
+* Picsum Photos API
+* React Hooks
 
-## Expanding the Oxlint configuration
+## ⚛️ React Concepts Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+* useState
+* useEffect
+* useReducer
+* useCallback
+* useMemo
+* Custom Hook (useFetchPhotos)
+
+## 📂 Project Structure
+
+```text
+src/
+├── hooks/
+│   └── useFetchPhotos.js
+├── reducers/
+│   └── favouriteReducer.js
+├── App.jsx
+├── main.jsx
+└── index.css
+```
+
+## ⚙️ Installation and Setup
+
+Clone the repository:
+
+```bash
+git clone https://github.com/CodeByAkib/celebrare-photo-gallery.git
+```
+
+Navigate to the project directory:
+
+```bash
+cd celebrare-photo-gallery
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Open the local URL displayed in your terminal.
+
+## 🌐 API Used
+
+Picsum Photos API:
+
+https://picsum.photos/v2/list?limit=30
+
+## 👨‍💻 Author
+
+**Md Akib Khan**
+
+GitHub: https://github.com/CodeByAkib
