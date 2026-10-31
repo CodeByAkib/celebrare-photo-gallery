@@ -13,13 +13,13 @@ initialState,
 } from "./reducers/favouriteReducer";
 
 function App() {
-// Fetch photos using custom hook
+
 const { photos, loading, error } = useFetchPhotos();
 
-// Search state
+
 const [searchTerm, setSearchTerm] = useState("");
 
-// Favourite state using useReducer
+
 const [state, dispatch] = useReducer(
 favouriteReducer,
 initialState
