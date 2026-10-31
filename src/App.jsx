@@ -27,7 +27,7 @@ initialState
 
 const { favorites, isLoaded } = state;
 
-// Load favourites from LocalStorage
+
 useEffect(() => {
 try {
 const savedFavorites = JSON.parse(
@@ -51,7 +51,7 @@ localStorage.getItem("favorites") || "[]"
 
 }, []);
 
-// Save favourites to LocalStorage
+
 useEffect(() => {
 if (isLoaded) {
 localStorage.setItem(
@@ -61,12 +61,12 @@ JSON.stringify(favorites)
 }
 }, [favorites, isLoaded]);
 
-// Search handler using useCallback
+
 const handleSearch = useCallback((event) => {
 setSearchTerm(event.target.value);
 }, []);
 
-// Filter photos using useMemo
+
 const filteredPhotos = useMemo(() => {
 return photos.filter((photo) =>
 photo.author
@@ -75,7 +75,7 @@ photo.author
 );
 }, [photos, searchTerm]);
 
-// Toggle favourite
+
 const toggleFavorite = (photo) => {
 dispatch({
 type: "TOGGLE_FAVORITE",
@@ -83,7 +83,7 @@ payload: photo,
 });
 };
 
-// Loading Spinner
+
 if (loading) {
 return ( <div className="min-h-screen flex flex-col items-center justify-center gap-4"> <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
 
@@ -97,7 +97,7 @@ return ( <div className="min-h-screen flex flex-col items-center justify-center 
 
 }
 
-// Error Handling
+
 if (error) {
 return ( <div className="min-h-screen flex items-center justify-center"> <p className="text-red-500 text-xl">
 {error} </p> </div>
@@ -107,7 +107,7 @@ return ( <div className="min-h-screen flex items-center justify-center"> <p clas
 return ( <div className="min-h-screen bg-gray-100 p-6">
 
 
-  {/* Header */}
+  
   <h1 className="text-3xl font-bold text-center mb-6">
     Photo Gallery
   </h1>
@@ -138,7 +138,7 @@ return ( <div className="min-h-screen bg-gray-100 p-6">
             className="bg-white rounded-xl shadow-md overflow-hidden"
           >
 
-            {/* Photo */}
+            
             <img
               src={`https://picsum.photos/id/${photo.id}/400/300`}
               alt={photo.author}
@@ -152,7 +152,7 @@ return ( <div className="min-h-screen bg-gray-100 p-6">
                 {photo.author}
               </h2>
 
-              {/* Favourite Button */}
+             
               <button
                 onClick={() => toggleFavorite(photo)}
                 aria-label={
